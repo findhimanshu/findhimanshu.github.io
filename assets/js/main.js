@@ -6,9 +6,25 @@
 */
 !(function($) {
   "use strict";
+  // $("btn1").hide();
+  // $("#sendbtn").click(()=>{
+  //   console.log("clicked")
+  //   window.open('mailto:test@example.com?subject=subject&body=body');
+  // })
 
   // Nav Menu
   $(document).on('click', '.nav-menu a, .mobile-nav a', function(e) {
+   
+    var href = $(this).attr('href');
+    if(href == "#header")
+    {
+      $("#btn1").show();
+    }
+    else
+    {
+      $("#btn1").hide();
+    }
+    //console.log(href);
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var hash = this.hash;
       var target = $(hash);
@@ -52,6 +68,7 @@
           $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
           $('.mobile-nav-overly').fadeOut();
         }
+
 
         return false;
 
